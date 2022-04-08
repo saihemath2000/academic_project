@@ -28,7 +28,7 @@ if (!$db) {
         }
     </style>
   </head>
-  <body>
+  <body onload="check()">
     <?php
     $path='../teacherregistration/video/';
 $id = $_SESSION['user']['id'];
@@ -157,5 +157,10 @@ $videoname = ob_get_clean();
         ?> width="400px" height="300px" style="margin-left:15px;" />
       </div>
     </section>
+    <script>
+      function check(){
+        // window.location.href='./teacher_profile.php'
+      }
+    </script>
   </body>
 </html>
