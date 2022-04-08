@@ -10,6 +10,7 @@
       html,
       body {
         margin: 0;
+        font-family: 'Pacifico', cursive;
         /* padding: 3em;   */
       }
       .banner {
@@ -82,7 +83,7 @@
           OLS
         </a> -->
          <div class="banner__text">
-          <strong style="font-family:'Josefin Sans', sans-serif">ONLINE LEARNING SYSTEM</strong>
+          <strong style="font-family:'Pacifico', cursive;">ONLINE LEARNING SYSTEM</strong>
         </div>
       </div>
     </div>
