@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <style>
+      html,body{
+        font-family: 'Pacifico', cursive;
+      }
          </style>
   </head>
   <body>
