@@ -204,7 +204,7 @@
           </li>
         </ul>
       </div>
-        <iframe src="dashboard.php" name="iframe_a" width="100%" height="1000px" title="Iframe Example" style="margin-left:300px;"  frameborder="0" allowfullscreen></iframe> 
+        <iframe src="dashboard.php" name="iframe_a" width="100%" height="1000px" title="Iframe Example" style="margin-left:10px;"  frameborder="0" allowfullscreen></iframe> 
     </div>
   </body>
 </html>
