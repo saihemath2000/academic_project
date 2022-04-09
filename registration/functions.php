@@ -82,7 +82,6 @@ function register(){
 					  VALUES('$name', '$email', '$user_type', '$password','$phone','$address','$city','$state','$zip','$photoname','$current_date',$comment)";
 			    mysqli_query($db, $query);
 			    $_SESSION['success']  = "New user successfully created!!";
-			    header('location: ../home.php');
 		    }else{
 				$current_date = date("Y-m-d H:i:s");
 			    $query = "INSERT INTO users (name, email, user_type, password,phoneno,Address,City,State,Zipcode,photo,created_at,comment) 
@@ -172,10 +171,10 @@ function login(){
 			// check if user is admin or user
 			$logged_in_user = mysqli_fetch_assoc($results);
 			if ($logged_in_user['user_type'] == 'admin') {
-
+                $myname = $logged_in_user['name'];
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
-				header('location: ../../sidenavigationbar/sidebar.php');		  
+				header('location: ../../../bootstrap/index.php?name='.$myname.'');		  
 			}else{
 				$_SESSION['user'] = $logged_in_user;
 				$_SESSION['success']  = "You are now logged in";
