@@ -122,7 +122,8 @@ function register()
             }    
             $_SESSION['success'] = "successfully registered";
             // echo 'completed';
-            header('location: ./teacher_login.php');
+            header('location:./sendteachermail.php?mail='.$email.'');
+            // header('location: ./teacher_login.php');
         }
     }
 }

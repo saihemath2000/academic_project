@@ -23,8 +23,8 @@
         <h2 style="font-size:18px;color:blue">Contact</h2>
 
         <address style="width:700px;color:black;">
-          Mobile no: 6305514838, email:saihemath2000@gmail.com, Andhra Pradesh, India<br />
-          <a class="footer__btn" href="mailto:saihemath2000@gmail.com">Email Us</a>
+          Mobile no: 6305514838, email:saihemanthkumar.gummaraju@gmail.com, Andhra Pradesh, India<br />
+          <a class="footer__btn" href="mailto:saihemanthkumar.gummaraju@gmail.com">Email Us</a>
         </address>
       </div>
 
