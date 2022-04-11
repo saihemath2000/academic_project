@@ -225,7 +225,7 @@
             <a><i id="more_files" class='fa fa-plus'></i></a></span>
               <div class="form-row">
                 <div class="form-group">
-                  <div id="asterik" style="  font-family:Open Sans, Arial, Helvetica Neue, sans-serif;padding:0;margin: 0;box-sizing: inherit;color: #555;font-weight: 700;display: block;width: 100%;margin-bottom: 7px;font-size: 18px;">Video about what you want to do</div>
+                  <div id="asterik" style="  font-family:Open Sans, Arial, Helvetica Neue, sans-serif;padding:0;margin: 0;box-sizing: inherit;color: #555;font-weight: 700;display: block;width: 100%;margin-bottom: 7px;font-size: 18px;">Video</div>
                   <input
                     type="file"
                     class="form-control-file"
