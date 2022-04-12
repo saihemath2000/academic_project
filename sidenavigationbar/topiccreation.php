@@ -1,4 +1,4 @@
-<?php include('./dashboard.php');?>
+<?php include('./topdashboard.php');?>
 
 <?php 
   $coursename = $_GET['coursename'];

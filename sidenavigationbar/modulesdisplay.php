@@ -1,4 +1,4 @@
-<?php include('./dashboard.php');?>
+<?php include('./topdashboard.php');?>
 <?php
    $db = mysqli_connect("localhost", "root", "", "course_info");
    if (!$db) {

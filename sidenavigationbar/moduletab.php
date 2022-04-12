@@ -1,4 +1,4 @@
-<?php include('./dashboard.php');?>
+<?php include('./topdashboard.php');?>
 <?php 
   error_reporting(E_ERROR | E_WARNING | E_PARSE);
   if(isset($_GET['course'])){

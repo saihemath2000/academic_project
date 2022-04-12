@@ -1,4 +1,4 @@
-<?php include('./dashboard.php');?>
+<?php include('./topdashboard.php');?>
 <?php 
  $course = $_GET['course'];
  $db = mysqli_connect("localhost", "root", "", "course_info");

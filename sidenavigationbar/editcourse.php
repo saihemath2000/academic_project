@@ -1,4 +1,4 @@
-<?php include('./dashboard.php'); ?>
+<?php include('./topdashboard.php'); ?>
 <?php include('../teacherregistration/validation.php');?>
 <?php 
   $instructor = $_SESSION['user']['name']; 
