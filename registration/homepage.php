@@ -269,7 +269,7 @@ $result = mysqli_query($db, $sql1);
     <br />
     <?php 
        $path='../sidenavigationbar/courseimages/';
-       $sql2="SELECT * from courseinstructors";
+       $sql2="SELECT * from courseinstructors where publish=1";
        $result1 = mysqli_query($db,$sql2);
        if($result1){}
        else{

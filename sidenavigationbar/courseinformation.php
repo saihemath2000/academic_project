@@ -19,6 +19,9 @@ if (!$db) {
   <title>CourseInfo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./courseinformation.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <style>
     .sideinfo {
       /* background-color:#737067; */
@@ -39,7 +42,6 @@ if (!$db) {
       margin-right: 250px;
       text-align: justify;
       text-justify: inter-word;
-      line-spacing: 1.0;
     }
   </style>
 </head>
@@ -62,6 +64,33 @@ if (!$db) {
     <h3 style="text-transform:uppercase;margin-top: 50px;margin-left:50px;"><?php echo $course; ?></h3>
     <img src="<?php echo $path . $row[9]; ?>" alt="courseimage" width="150" height="150" style="margin-left:auto;order:2;margin-right:50px;margin-top:60px;" />
   </div></br></br>
+  <button type="button" 
+          id="Publish"  
+          class="btn btn-success" 
+          data-toggle="modal" 
+          data-target="#myModal3" 
+          style="margin-left:700px;width:200px;">Publish</button>
+  <div class="modal" id="myModal3">
+    <div class="modal-dialog" style="margin-left:2px;margin-top:5px;">
+      <div class="modal-content">  
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Do you really want to publish? Make sure you made all 
+               changes before publishing.
+            </h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>      
+          <!-- Modal body -->
+          <div class="modal-body">
+              <button type="button" class="btn btn-secondary" onclick="setpublish(1);">Yes</button>
+              <button type="button" class="btn btn-success" onclick="setpublish(0);">No</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <h2 style='margin-left:50px;'>Course Video</h2></br>
  <?php  
     if($videoforcourse==''){
@@ -119,6 +148,21 @@ if (!$db) {
   </main>
 
   <script src="./script.js"></script>
+  <script>
+    function setpublish(value){
+      if(value==1){
+        //  var a = document.getElementById('Publish');
+        // //  alert(a.innerHTML);
+        //  a.innerHTML='published';
+        //  a.style.width='220px';
+        //  localStorage ='published';
+         window.location.href='setpublish.php?value=1&course=<?php echo $course; ?>';  
+      }
+      else{
+        window.location.href='setpublish.php?value=0&course=<?php echo $course; ?>'; 
+      }
+    }
+  </script>
 </body>
 
 </html>
