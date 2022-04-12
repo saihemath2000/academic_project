@@ -97,7 +97,7 @@
         </div>
       </div>
     </div>
-    <div class="card" style="width: 25rem;margin-top:40px;margin-left:40px;">
+    <div class="card bg-info text-white" style="width: 25rem;margin-top:40px;margin-left:40px;">
       <div class="card-body">
         <h5 class="card-title" style="font-weight:bold;">
         <i class="fa fa-location-arrow"></i>
@@ -117,7 +117,7 @@
         <a href="#" class="card-link">Another link</a> -->
       </div>
     </div>
-    <div class="card" style="width: 25rem;margin-top:40px;margin-left:40px;">
+    <div class="card bg-secondary text-white" style="width: 25rem;margin-top:40px;margin-left:40px;">
       <div class="card-body">
         <h5 class="card-title" style="font-weight:bold;">Course completions</h5>
         <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:yellow;"></h6>
@@ -131,13 +131,13 @@
             <div class="progress-bar" role="progressbar" style="width:'.$c.'%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">'.$c.'%</div>
           </div>';
           ?></br>
-          <p class="text-muted" style="float:right;">Courses:
+          <p  style="float:right;">Courses:
            <?php  echo $a.'/'.$b;?>
           </p>           
         </p>
       </div>
     </div>
-    <div class="card" style="width: 55rem;margin-top:40px;margin-left:40px;">
+    <div class="card" style="width: 55rem;margin-top:40px;margin-left:40px;background-color:#9d81ab">
       <div class="card-body">
         <h5 class="card-title" style="font-weight:bold;">My Courses</h5>
         <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:green;"></h6>
@@ -147,12 +147,12 @@
           while($row = mysqli_fetch_assoc($result4)) {
             echo '<div class="row"><div class="col-4"><img src="courseimages/'.$row['image'].'" width="75px" height="75px;"/></div>';
             echo '<div class="col-8"><a href="./courseinformation.php?course='.$row['title'].'"
-                     style="text-decoration:none;color:brown;">
+                     style="text-decoration:none;color:black;">
                      <h5>'.$row['title'].'</h5>
                      </a>
                   </div>
                   </div>';
-            echo '<p class="text-muted" style="float:right">No of learners enrolled:5</p>';      
+            echo '<p style="float:right;color:white;">No of learners enrolled:5</p>';      
             echo '<br><br>';         
           }
         }

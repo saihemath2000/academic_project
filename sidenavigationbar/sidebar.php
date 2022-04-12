@@ -23,7 +23,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="sidebar" style="font-size: 22px;width:300px; min-height: 20px;overflow:scroll;overflow-x: hidden;max-height:100vh;">
+      <div class="sidebar" 
+      style="font-size: 22px;width:300px; min-height: 20px;overflow:scroll;overflow-x: hidden;max-height:100vh;">
       <?php  if (isset($_SESSION['user'])) : ?>
 					<h1 style="color:white;font-size:28px;margin-left:10px;"><?php echo $_SESSION['user']['name']; ?></h1>
       <?php endif ?></br>
