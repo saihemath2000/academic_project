@@ -6,9 +6,11 @@
   $sql ="SELECT title from courseinstructors order by id desc limit 3";
   $sql2= "SELECT count(*) as count from courseinstructors where publish=1 ";
   $sql3= "SELECT count(*) as count from courseinstructors";
+  $sql4 = "SELECT title,image from courseinstructors where publish=1";
   $result1= mysqli_query($db,$sql2);
   $result = mysqli_query($db,$sql);
   $result3 = mysqli_query($db,$sql3);
+  $result4= mysqli_query($db,$sql4);
   $row2 = mysqli_fetch_assoc($result3);
 ?>
 <!DOCTYPE html>
@@ -19,13 +21,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="dashboard.css">
     <style>
       html,
       body {
         margin: 0;
         font-family: 'Pacifico', cursive;
-        /* padding: 3em;   */
+        font-size:17px;
       }
       .banner {
         /* background-color: yellow; */
@@ -94,9 +97,11 @@
         </div>
       </div>
     </div>
-    <div class="card" style="width: 18rem;margin-top:40px;margin-left:40px;">
+    <div class="card" style="width: 25rem;margin-top:40px;margin-left:40px;">
       <div class="card-body">
-        <h5 class="card-title" style="font-weight:bold;">Recent courses</h5>
+        <h5 class="card-title" style="font-weight:bold;">
+        <i class="fa fa-location-arrow"></i>
+        Recent courses</h5>
         <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:red;"></h6>
         <p class="card-text">
       <?php 
@@ -115,7 +120,7 @@
     <div class="card" style="width: 25rem;margin-top:40px;margin-left:40px;">
       <div class="card-body">
         <h5 class="card-title" style="font-weight:bold;">Course completions</h5>
-        <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:red;"></h6>
+        <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:yellow;"></h6>
         <p class="card-text">
           <?php
           $row1 = mysqli_fetch_assoc($result1);
@@ -130,6 +135,31 @@
            <?php  echo $a.'/'.$b;?>
           </p>           
         </p>
+      </div>
+    </div>
+    <div class="card" style="width: 55rem;margin-top:40px;margin-left:40px;">
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight:bold;">My Courses</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><hr style="height:1px;background-color:green;"></h6>
+        <p class="card-text">
+      <?php 
+        if (mysqli_num_rows($result4) > 0) {
+          while($row = mysqli_fetch_assoc($result4)) {
+            echo '<div class="row"><div class="col-4"><img src="courseimages/'.$row['image'].'" width="75px" height="75px;"/></div>';
+            echo '<div class="col-8"><a href="./courseinformation.php?course='.$row['title'].'"
+                     style="text-decoration:none;color:brown;">
+                     <h5>'.$row['title'].'</h5>
+                     </a>
+                  </div>
+                  </div>';
+            echo '<p class="text-muted" style="float:right">No of learners enrolled:5</p>';      
+            echo '<br><br>';         
+          }
+        }
+      ?>
+        </p>
+        <!-- <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a> -->
       </div>
     </div>
   </body>
