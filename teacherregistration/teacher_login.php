@@ -96,8 +96,11 @@
               </div>
                 <button class="btn btn--radius-2 btn--green" style="margin-left:200px;" type="submit" name="login">Login</button>
             </form></br></br>
-            <center><div style="font-size:16px;"><b><a>new Member?</a></b><b><a href="teacher_register.php" style="text-decoration:none;"> &nbsp;&nbsp; create account</a></b></div></center>
-            <div class="social-login" style="display:flex;margin-left:220px;">
+            <center><div style="font-size:16px;"><b><a>new Member?</a></b><b><a href="teacher_register.php" style="text-decoration:none;"> &nbsp;&nbsp; create account</a></b></div></center><br>
+            <a 
+              style="text-decoration:none;margin-left:200px;font-size:18px;" 
+              href="enter_mail.php">Forgot password ?</a>
+            <div class="social-login" style="display:flex;margin-left:200px;">
                 <span class="social-label" style="font-size:16px;"><b>Or login with </b></span>
                     <ul class="socials" style="display:flex;">
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
