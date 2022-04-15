@@ -33,7 +33,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading " role="tab" id="headingOne">
                     <h4 class="panel-title ">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="./teacher_profile.php" aria-expanded="" aria-controls="collapseOne" id="yoyo">
+                        <a role="button"  href="./teacher_profile.php" >
                         <div style="border:none;" class="title  btn btn-danger btn-outline btn-lg">ABOUT</div>
                         </a>
                     </h4>
