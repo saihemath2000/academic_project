@@ -60,7 +60,7 @@ $result = mysqli_query($db, $sql1);
           color:red;
         }
       .imagediv {
-        background-image: url("/registration/laptop.jpg");
+        background-image: url("./images/laptop.jpg");
         height: 50%;
         background-position: center;
         background-repeat: no-repeat;
