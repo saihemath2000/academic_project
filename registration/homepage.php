@@ -89,10 +89,50 @@ $result = mysqli_query($db, $sql1);
         right: 0%;
         top: 40%;
       }
-      /* .card:hover {
-        box-shadow: 8px 8px 8px blue;
-        transform: scale(1.2);
-      } */
+      .matter{
+        background-color: #00004d;
+        width:1500px;
+        height:500px;
+        position: relative;
+      }
+      .matter-text{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 20%;
+        /* right: 20%; */
+        text-align: center;
+        top: 10%;
+      }
+      .vision{
+        /* background-color: #2e2e1f; */
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+        width:1500px;
+        height:500px;
+        position: relative;
+      }
+      .vision-text{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 2%;
+        right: 35%; 
+        text-align: center;
+        top: 5%;
+      }
+      @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
     </style>
   </head>
   <body>
@@ -248,19 +288,6 @@ $result = mysqli_query($db, $sql1);
             aria-label="Search"
             onchange="searchcourses()"
           />
-          <!-- <button
-            type="submit"
-            class="
-              btn-inverse-brand
-              form-submit
-              edit-submit
-              btn btn-brand btn-primary
-            "
-            style="font-size: 20px"
-            onclick="searchcourses()"
-          >
-            Search
-          </button> -->
         </form>
       </div>
     </div>
@@ -295,7 +322,35 @@ $result = mysqli_query($db, $sql1);
         echo "0 results";
     }    
     ?>
-    <br>
+    <div class="matter">
+        <img 
+           src="./images/person_image.jpg" 
+           alt="image"
+           width="400px"
+           height="500px"
+           style="transform:skew(-10deg);margin-left:35px;">
+         <div class="matter-text">
+            <h2 style="color:yellow;">For Learners:</h2><br>
+            <h4 style="margin-left:400px;color:white;">
+                Explore Courses, expand your knowledge at any level</h4> <br>
+            <h2 style="color:magenta;">For Teachers:</h2><br>
+            <h4 style="margin-left:300px;color:white;">
+                Create your own courses with free of cost</h4> <br>     
+         </div>  
+    </div>
+    <br><br><br>
+    <div class="vision">
+      <div class="vision-text">
+        <h3 style="color:yellow;margin-right:730px;">Our Vision</h3><br>
+        <p align="justify" 
+           style="color:white;font-size:30px;margin-left:50px;">
+          Provide all students with challenging learning experiences in a safe and welcoming environment</p><br>
+        <p align="justify"
+           style="color:white;font-size:30px;margin-left:50px;">
+          Vision of a world where every learner can access education to unlock thier potential,
+        without barriers of cost and location</p>  
+      </div>
+    </div><br><br>
     <h2 style="margin-left:25px;">Contact Form</h2></br>
     <form method="POST" action='./contact_form.php' style='margin-left:25px;'>
       <div class="form-group col-4">
