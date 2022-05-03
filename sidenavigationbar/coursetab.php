@@ -1,5 +1,11 @@
 <?php include('./topdashboard.php');?>
 <?php include('../teacherregistration/validation.php'); ?>
+<?php 
+  $db = mysqli_connect('localhost','root','','course_info');
+  $sql = "SELECT category from addedcategory";
+  $result = mysqli_query($db,$sql);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,13 +46,33 @@
             name="coursetitle"
           />
         </div>
-        <div class="form-group col-md-6">
+        <div class="row">
+        <div class="form-group col-md-6" style="margin-left:14px;">
           <label for="exampleFormControlSelect1">Select category</label>
           <select class="form-control" id="exampleFormControlSelect1" name="category">
-            <option>Choose category</option>
+                <option selected>Choose</option> 
+                <?php 
+                  if (mysqli_num_rows($result)>0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        echo '<option>'.$row['category'].'</option>';  
+                    }
+                  }
+                ?>
+            <!-- <option>Choose category</option>
             <option>Computer science</option>
-            <option>General</option>
+            <option>General</option> -->
           </select>
+        </div>
+        <div class="col-md-4">
+        <a 
+          data-toggle="modal" 
+          data-target="#myModal1"
+          href=""
+          style="text-decoration:none;
+                 padding-top:50px;
+                 color:red;
+                 ">Request new Category</a>
+        </div>
         </div>
         <div class="form-group col-md-6">
           <label for="course">Mention Schedule</label>
@@ -124,6 +150,53 @@
           Submit
         </button>
       </form>
+      <div class="modal" id="myModal1" style="margin-top:50px;">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Enter category</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <form action="categorysendmailtoadmin.php" method="POST">
+                      <div class="form-group col-8">
+                        <label for="email">Registered Email</label>
+                        <input type="email"  class="form-control" name="email" id="email" placeholder="Your Email" required/>
+                      </div>
+                      <div class="form-group col-8">
+                        <label for="category">Category</label>
+                        <input type="text" placeholder="enter category" class="form-control" name="category" id="category" required>
+                      </div>
+                      <button id="categorysubmit" class="btn btn-primary" onclick="confirmsubmit();" style="margin-left:20px" type="submit" name="submitvalue">Submit</button>
+                    </form>
+                  </div>
+                </div>
+          </div>
       </div>
 </body>
+<script>
+  function confirmsubmit(){
+    alert("request submitted successfully, wait for approval");
+  }
+</script>
+<script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+      integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+      crossorigin="anonymous"
+    ></script>
+       
 </html>
