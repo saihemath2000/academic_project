@@ -1,12 +1,16 @@
 <?php 
+  session_start();
+  if(isset($_SESSION['user'])){
+    $name =$_SESSION['user']['name'];
+  }
   $db = mysqli_connect("localhost", "root", "", "course_info");
   if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  $sql ="SELECT title from courseinstructors order by id desc limit 3";
-  $sql2= "SELECT count(*) as count from courseinstructors where publish=1 ";
-  $sql3= "SELECT count(*) as count from courseinstructors";
-  $sql4 = "SELECT title,image from courseinstructors where publish=1";
+  $sql ="SELECT title from courseinstructors where instructor='$name' order by id desc limit 3";
+  $sql2= "SELECT count(*) as count from courseinstructors where publish=1 and instructor='$name' ";
+  $sql3= "SELECT count(*) as count from courseinstructors where instructor='$name'";
+  $sql4 = "SELECT title,image from courseinstructors where publish=1 and instructor='$name'";
   $result1= mysqli_query($db,$sql2);
   $result = mysqli_query($db,$sql);
   $result3 = mysqli_query($db,$sql3);
@@ -111,6 +115,9 @@
                      style="text-decoration:none;color:brown;"><h5>'.$row['title'].'</h5></a>';
           }
         }
+        else{
+          echo '<h4 style="margin-left:40px;color:red">No recent courses created to display</h4>';
+        }
       ?>
         </p>
         <!-- <a href="#" class="card-link">Card link</a>
@@ -126,10 +133,15 @@
           $row1 = mysqli_fetch_assoc($result1);
           $a =  $row1['count'];
           $b = $row2['count'];
-          $c=($a/$b)*100;
-          echo '<div class="progress">
-            <div class="progress-bar" role="progressbar" style="width:'.$c.'%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">'.$c.'%</div>
-          </div>';
+          if($b==0){
+              echo '<h4 style="color:magenta;">No courses created to display</h4>'; 
+          }
+          else{
+            $c=($a/$b)*100;
+            echo '<div class="progress">
+              <div class="progress-bar" role="progressbar" style="width:'.$c.'%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">'.$c.'%</div>
+             </div>';
+          }
           ?></br>
           <p  style="float:right;">Courses:
            <?php  echo $a.'/'.$b;?>
@@ -155,6 +167,9 @@
             echo '<p style="float:right;color:white;">No of learners enrolled:5</p>';      
             echo '<br><br>';         
           }
+        }
+        else{
+          echo '<h4 style="color:blue;">No courses created</h4>';
         }
       ?>
         </p>
