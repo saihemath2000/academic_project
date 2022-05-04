@@ -287,6 +287,7 @@ $result = mysqli_query($db, $sql1);
             placeholder="Search more courses"
             aria-label="Search"
             onchange="searchcourses()"
+            required
           />
         </form>
       </div>
