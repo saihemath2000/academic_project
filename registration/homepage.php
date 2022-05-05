@@ -260,7 +260,9 @@ $result = mysqli_query($db, $sql1);
               </div>
             </div>
           </li>
-          <div class="dropdown" style="margin-left:10px;">
+          <?php
+          if (isset($_SESSION['user'])){
+          echo '<div class="dropdown" style="margin-left:10px;">
             <button 
             type="button" 
             class="btn dropdown-toggle" 
@@ -269,10 +271,15 @@ $result = mysqli_query($db, $sql1);
               My Account
             </button>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="studentprofile.php?name=<?php echo $name; ?>">Profile</a>
+              <a class="dropdown-item" href="studentprofile.php?name='.$name.'">Profile</a>
               <a class="dropdown-item" href="./signout.php">Logout</a>
             </div>
-          </div>
+          </div>';
+          }
+          else{
+
+          }
+          ?>
         </div>
         </ul>
       </div>
