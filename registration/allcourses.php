@@ -277,106 +277,37 @@ $result = mysqli_query($db, $sql1);
         </ul>
       </div>
     </nav>
-    <div class="imagediv">
-      <div class="text">
-        <center><h1>Start Learning with Upadana </h1></center>
-      </div>
-      <div class="buttondiv">
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            id='search'
-            placeholder="Search more courses"
-            aria-label="Search"
-            onblur="searchcourses()"
-            required
-          />
-        </form>
-      </div>
-    </div>
-    <br /><br />
-    <h1 style="margin-left: 28px">Explore Top Courses</h1>
+    <br><br>
+    <h1 style="margin-left: 28px">Explore All Courses</h1>
     <br />
     <?php 
        $path='../sidenavigationbar/courseimages/';
-       $sql2="SELECT * from courseinstructors where publish=1";
+       $sql2="SELECT * from courseinstructors where publish='1'";
        $result1 = mysqli_query($db,$sql2);
        if(!$result1){
          mysqli_error($db);
        }
-       $count =1;
        if (mysqli_num_rows($result1) > 0) {
         // output data of each row
-        echo '<div class="card-columns" style="height:400px;margin-left:20px;" id="courses">';
-        while ($count<=3 && $count<=mysqli_num_rows($result1)) {
-          $row = mysqli_fetch_assoc($result1);
+        echo '<div class="row" style="height:400px;margin-left:20px;" id="courses">';
+        while ($row = mysqli_fetch_assoc($result1)) {
             $mycourse=$row['title'];
             $fortitle=$row['title'];
             $fortitle=str_replace(' ', '', $fortitle);
             $fortitle=strtolower($fortitle);
             $tags[$fortitle]=$row['tags'];
-            echo '<div class="card" name="hello"  id='.$fortitle.' style="width: 25rem;height:20rem;margin-left:10px;">';
+            echo '<div class="card col-sm-3" name="hello"  id='.$fortitle.' style="width: 25rem;height:20rem; margin :25px; background-color: lightgray">';
             echo '<img class="card-img-top" src=' . $path . $row['image'] . ' style="height:150px;width:150px;margin-top:5px;" alt="course image">';
             echo '<div class="card-body" style="width:350px;"><h5 class="card-title">' . $row['title'] . '</h5>
                     <a href="courseinformation.php?course='.$mycourse.'" class="btn btn-primary">Goto Course</a></div></div>';
-            echo '&nbsp; <br>';
-            $count = $count+1;
+            echo '&nbsp;';
         }
-        echo '<center><a href="allcourses.php">View More</p></center>';
-        echo '</div>';
+        echo '</div></div>';
     } else {
         echo "0 results";
     }    
     ?>
-    <div class="matter">
-        <img 
-           src="./images/person_image.jpg" 
-           alt="image"
-           width="400px"
-           height="500px"
-           style="transform:skew(-10deg);margin-left:35px;">
-         <div class="matter-text">
-            <h2 style="color:yellow;">For Learners:</h2><br>
-            <h4 style="margin-left:400px;color:white;">
-                Explore Courses, expand your knowledge at any level</h4> <br>
-            <h2 style="color:magenta;">For Teachers:</h2><br>
-            <h4 style="margin-left:300px;color:white;">
-                Create your own courses with free of cost</h4> <br>     
-         </div>  
-    </div>
-    <br><br><br>
-    <div class="vision">
-      <div class="vision-text">
-        <h3 style="color:yellow;margin-right:730px;">Our Vision</h3><br>
-        <p align="justify" 
-           style="color:white;font-size:30px;margin-left:50px;">
-          Provide all students with challenging learning experiences in a safe and welcoming environment</p><br>
-        <p align="justify"
-           style="color:white;font-size:30px;margin-left:50px;">
-          Vision of a world where every learner can access education to unlock thier potential,
-        without barriers of cost and location</p>  
-      </div>
-    </div><br><br>
-    <h2 style="margin-left:25px;">Contact Form</h2></br>
-    <form method="POST" action='./contact_form.php' style='margin-left:25px;'>
-      <div class="form-group col-4">
-        <label for="name" id="asterik">Name</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name" required>
-      </div>
-      <div class="form-group col-4">
-        <label for="email" id="asterik">Email</label>
-        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group col-6">
-        <label for="message" id="asterik">Message</label>
-        <textarea class="form-control" id="message" rows="3" name="message" required></textarea>
-      </div>
-      <button name="details" type="submit" class="btn btn-primary" style='margin-left:15px;'>Submit</button>
-    </form>
-  </br></br>
-    <?php include('./footer.php'); ?>
+    <br>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
