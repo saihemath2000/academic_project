@@ -278,7 +278,24 @@ $result = mysqli_query($db, $sql1);
       </div>
     </nav>
     <br><br>
-    <h1 style="margin-left: 28px">Explore All Courses</h1>
+    <div class="row">
+        <div class="col-8">
+            <h1 style="margin-left: 28px">Explore All Courses</h1>  
+        </div>
+        <div class="col-4">
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            id='search'
+            placeholder="Search more courses"
+            aria-label="Search"
+            onblur="searchcourses()"
+            required
+          />
+        </form>
+        </div>
+    </div>
     <br />
     <?php 
        $path='../sidenavigationbar/courseimages/';

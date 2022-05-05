@@ -169,7 +169,7 @@ $result = mysqli_query($db, $sql1);
                   <h1><b>Courses</b></h1>
                 </div>
                 <div class="col-4">
-                  <a href="#courses"><button class="btn1">View All Courses</button></a>
+                  <a href="allcourses.php"><button class="btn1">View All Courses</button></a>
                 </div>
               </div>
               <hr
@@ -323,12 +323,13 @@ $result = mysqli_query($db, $sql1);
             echo '&nbsp; <br>';
             $count = $count+1;
         }
-        echo '<center><a href="allcourses.php">View More</p></center>';
+        echo '<center><a href="allcourses.php"><p>View More</p></a></center>';
         echo '</div>';
     } else {
         echo "0 results";
     }    
     ?>
+    <br><br><br>
     <div class="matter">
         <img 
            src="./images/person_image.jpg" 
@@ -348,7 +349,7 @@ $result = mysqli_query($db, $sql1);
     <br><br><br>
     <div class="vision">
       <div class="vision-text">
-        <h3 style="color:yellow;margin-right:730px;">Our Vision</h3><br>
+        <h3 style="color:yellow;margin-right:700px;">Our Vision</h3><br>
         <p align="justify" 
            style="color:white;font-size:30px;margin-left:50px;">
           Provide all students with challenging learning experiences in a safe and welcoming environment</p><br>
