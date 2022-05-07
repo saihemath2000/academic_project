@@ -140,7 +140,7 @@ $result = mysqli_query($db, $sql1);
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-lg navbar-dark bg-light"
+      class="navbar navbar-expand-lg navbar-dark bg-secondary"
       style="height: 80px"
     >
     <img src="./images/teach_and_learn.png" width="90px" height="90px" style="margin-top:5px;">
@@ -202,7 +202,7 @@ $result = mysqli_query($db, $sql1);
               <button
                 id="login"
                 type="button"
-                class="btn btn-secondary pull-right"
+                class="btn btn-primary pull-right"
                 style="margin-left:800px;margin-top:5px;"
                 data-toggle="modal" 
                 data-target="#myModal1"  

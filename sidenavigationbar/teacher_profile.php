@@ -53,7 +53,7 @@ $videoname = ob_get_clean();
                   
                 />
                 <h5 class="my-3"><?php echo $result1[0]; ?></h5>
-                <p class="text-muted mb-1">Instructor</p>
+                <p class="text-muted mb-1">Teacher</p>
               </div>
             </div>
           </div>

@@ -288,7 +288,7 @@ $result = mysqli_query($db, $sql1);
       <div class="text">
         <center><h1>Start Learning with Upadana </h1></center>
       </div>
-      <div class="buttondiv">
+      <!-- <div class="buttondiv">
         <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
@@ -300,7 +300,7 @@ $result = mysqli_query($db, $sql1);
             required
           />
         </form>
-      </div>
+      </div> -->
     </div>
     <br /><br />
     <h1 style="margin-left: 28px">Explore Top Courses</h1>
@@ -401,35 +401,35 @@ $result = mysqli_query($db, $sql1);
       crossorigin="anonymous"
     ></script>
     <script>
-        function searchcourses(){
-            var courses=[];
-            let input = document.getElementById('search').value;
-            input=input.toLowerCase();
-            input=input.split(' ').join('');
-            input='#'+input;
-            var jstags = <?php echo json_encode($tags); ?>;
-            const entries = Object.entries(jstags);
-            for(i=0;i<entries.length;i++){
-                var temp1=entries[i][0];
-                var temp2=entries[i][1];
-                temp2=temp2.split(' ').join('');
-                // console.log(typeof temp2);
-                if(temp2.indexOf(input)!=-1){
-                    courses.push(temp1);       
-                }                
-            }
-            // console.log(courses);
+        // function searchcourses(){
+        //     var courses=[];
+        //     let input = document.getElementById('search').value;
+        //     input=input.toLowerCase();
+        //     input=input.split(' ').join('');
+        //     input='#'+input;
+        //     var jstags = <?php echo json_encode($tags); ?>;
+        //     const entries = Object.entries(jstags);
+        //     for(i=0;i<entries.length;i++){
+        //         var temp1=entries[i][0];
+        //         var temp2=entries[i][1];
+        //         temp2=temp2.split(' ').join('');
+        //         // console.log(typeof temp2);
+        //         if(temp2.indexOf(input)!=-1){
+        //             courses.push(temp1);       
+        //         }                
+        //     }
+        //     // console.log(courses);
 
-            const e = document.getElementsByName('hello');
-            for(i=0;i<e.length;i++){
-                if(courses.includes(e[i].id)){
-                    e[i].style.display="block";
-                }
-                else{
-                    e[i].style.display="none";
-                }
-            }
-        }
+        //     const e = document.getElementsByName('hello');
+        //     for(i=0;i<e.length;i++){
+        //         if(courses.includes(e[i].id)){
+        //             e[i].style.display="block";
+        //         }
+        //         else{
+        //             e[i].style.display="none";
+        //         }
+        //     }
+        // }
     </script>
   </body>
 </html>
